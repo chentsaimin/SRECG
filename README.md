@@ -5,6 +5,8 @@ Authors: Tsai-Min Chen (1 and 2), Yuan-Hong Tsai (3 and 4), Huan-Hsin Tseng (2),
 
 training, validation, and testing code: SRECG.ipynb
 
+testing analysis folder: comparison
+
 reference papers: 
 1. https://ieeexplore.ieee.org/document/10018428/
 2. https://arxiv.org/abs/2012.03803/
