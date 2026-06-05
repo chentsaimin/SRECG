@@ -1,6 +1,6 @@
 # SRECG 1.1 minimal runtime requirements
-# The uploaded full environment freeze is preserved as requirements.full.freeze.txt.
-# This file intentionally avoids host-local `file://` package references and unrelated packages.
+# Manual-upload version: keep this file lightweight and portable.
+# Install with: python -m pip install -r requirements.txt
 
 numpy>=1.24,<3
 pandas>=2.0
