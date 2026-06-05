@@ -17,7 +17,7 @@ No generated result folders or auxiliary files are required for this lightweight
 - Adds Kaggle/local path discovery for the CPSC2018 dataset.
 - Uses memory-mapped NumPy cache handling to reduce RAM pressure during repeated ECG loading.
 - Keeps the 10-fold evaluation workflow in the notebook.
-- Updates the uploaded `requirements.txt` to a minimal runtime dependency list instead of committing an environment-specific full freeze. The notebook can still generate a full freeze during execution when `WRITE_REQUIREMENTS = True`.
+- Updates `requirements.txt` to a minimal runtime dependency list instead of an environment-specific full freeze.
 
 ## Repository layout after manual upload
 
@@ -79,10 +79,16 @@ The notebook exposes key configuration variables near the top:
 | `FAST_DEV_RUN` | `False` | Use `True` only for a small smoke test. |
 | `REUSE_EXISTING_CHECKPOINTS` | `True` | Reuse trained checkpoints if available. |
 | `REBUILD_DATA_CACHE` | `False` | Rebuild the memory-mapped data cache when needed. |
-| `WRITE_REQUIREMENTS` | `True` | Export a full `pip freeze` snapshot from the active environment when the notebook runs. Before committing, review whether you want to keep the lightweight `requirements.txt` or the generated full freeze. |
+| `WRITE_REQUIREMENTS` | `False` | Avoid overwriting the lightweight `requirements.txt` during normal runs. |
 | `SRECG_BATCH_SIZE` | `64` | Optional environment override for batch size. |
 | `SRECG_EPOCHS` | `100` | Optional environment override for training epochs. |
 | `SRECG_DETERMINISTIC` | `0` | Set to `1` for stricter deterministic behavior at the cost of speed. |
+
+## GitHub notebook preview note
+
+`SRECG.ipynb` in this manual-upload package is saved as a GitHub-renderable notebook: code and Markdown are preserved, but saved cell outputs are cleared before upload. This avoids GitHub preview failures such as `Unable to render code block` caused by large embedded notebook outputs.
+
+This does **not** change the experiment source code or runtime logic. Running the notebook regenerates the outputs from the same cells.
 
 ## Manual GitHub upload procedure
 
